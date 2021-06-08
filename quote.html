@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="/CSS/randomstyle.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.10.0-11/css/all.min.css" integrity="sha512-98RDZg4fCzeqQfuL8fx1uo+Wh3cSp9TVKWDiBL2nJ3XJahJtAaJyYtmBd2mmj6NChONautL3XCJ8WQTliMcMhg==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <title>Document</title>
+</head>
+
+<body>
+        <div class="container">
+        <div class="inner">
+            <div class="box">
+                <p class="number">
+
+                </p>
+                <div class="text">
+                    <i class="start-quote fas fa-quote-left"></i>
+                    <p id="quotes" class="quotes"></p>
+                    <p id="author" class="author"></p>
+
+                </div>
+                <label class="button">
+                    <p id="newquote">Next</p>
+                </label>
+            </div>
+        </div>
+
+    </div>
+    <script>
+
+        const quotes = document.getElementById("quotes");
+        const author = document.getElementById("author");
+        const newquote = document.getElementById("newquote");
+        let realdata = "";
+        let quotesdata = "";
+        const getnewquote = () => {
+            let rnum = Math.floor(Math.random() * 20);
+            quotesdata = realdata[rnum];
+            quotes.innerText = `${quotesdata.text}`;
+            quotesdata.author == null
+                ? (author.innerText = "unKnown")
+                : (author.innerText = `${quotesdata.author}`);
+
+        };
+        const getquote = async () => {
+            const api = "https://type.fit/api/quotes";
+            try {
+                let data = await fetch(api);
+                realdata = await data.json();
+                getnewquote();
+                // console.log(realdata.length);
+                //console.log(realdata[10].author);ss
+            } catch (error) { }
+        };
+        newquote.addEventListener("click", getnewquote);
+        getquote();
+
+    </script>
+</body>
+
+</html>
