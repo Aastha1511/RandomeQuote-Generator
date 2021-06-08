@@ -1,0 +1,90 @@
+@import url("https://fonts.googleapis.com/css2?family=Quicksand:wght@700&display=swap");
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: "Quicksand", sans-serif;
+}
+
+:root {
+  --primary-color: #364ba7;
+  --secondary-color: #92445d;
+}
+
+body {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  height: 100vh;
+  background-image: url("https://source.unsplash.com/1600x900/?nature,water");
+  background-repeat: no-repeat;
+  background-size: 1400px 900px, 1600px 800px;
+  animation: animate 40s ease-in-out infinite;
+  background-size: cover;
+  z-index: -1;
+}
+@keyframes animate{
+  0%{
+      background-image: url("/image/cloud1.jpg");
+  }
+  10%{
+      background-image: url("/image/cloud2.jpg");
+  }
+  20%{
+      background-image: url("/image/cloud3.jpg");
+  }
+  30%{
+      background-image: url("/image/cloud5.jpg");
+  }
+  50%{
+      background-image: url("/image/cloud6.jpg");
+  
+  }
+  60%{
+    background-image: url("/image/cloud8.jpg");
+  }
+  70%{
+      background-image: url("/image/jerry-zhang-KPhCQvE7eDQ-unsplash.jpg");
+
+  }
+  80%{
+    background-image:url("/image/kristaps-ungurs-mj_TZKBeAPg-unsplash.jpg");
+  }
+  100%{
+    background-image: url("/image/cloud4.jpg");
+  }
+}
+.container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding: 40px;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.6);
+  border-radius: 30px;
+  width: 600px;
+  background-color: rgba(255, 255, 255, 0.3);
+  margin: 10px;
+}
+
+.fa-quote-left {
+  font-size: 55px;
+  color: var(--secondary-color);
+}
+
+.quotes {
+  font-size:30px ;
+  text-align: center;
+  font-style: italic;
+  color: black;
+}
+
+.author {
+  color: var(--secondary-color);
+  font-size: 25px;
+}
+#newquote{
+  font-size: 25px;
+  font-style: italic;
+}
+
