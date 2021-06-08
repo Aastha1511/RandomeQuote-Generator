@@ -52,8 +52,6 @@
                 let data = await fetch(api);
                 realdata = await data.json();
                 getnewquote();
-                // console.log(realdata.length);
-                //console.log(realdata[10].author);ss
             } catch (error) { }
         };
         newquote.addEventListener("click", getnewquote);
